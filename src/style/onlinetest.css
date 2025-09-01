@@ -1,0 +1,167 @@
+/* General Exam Container */
+.exam-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.exam-container h1 {
+  font-size: 2.2rem;
+  color: #2b4eff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.exam-container .sub-title {
+  font-size: 1rem;
+  color: #666;
+  margin: 4px 0;
+  text-align: center;
+}
+
+/* Questions Section */
+.exam-container h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #222;
+  border-left: 4px solid #2b4eff;
+  padding-left: 8px;
+}
+
+.exam-questions {
+  list-style: none;
+  padding-left: 0;
+}
+
+.exam-questions li {
+  background: #f9f9ff;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid #e3e6ff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exam-questions li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Options */
+.options {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.options li {
+  margin-bottom: 10px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid #d6d9ff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.options input[type="radio"] {
+  accent-color: #2b4eff;
+  transform: scale(1.2);
+}
+
+.options label:hover {
+  background: #eef2ff;
+  border-color: #2b4eff;
+}
+
+/* Submit Button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 30px;
+  background: linear-gradient(90deg, #2b4eff, #6f75ff);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #1f39d0, #5459f5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
+}
+/* Question title with number */
+.question-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Circular question number */
+.question-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2b4eff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+.question-number:hover {
+  background: #1f39d0;
+}
+
+/* Timer display */
+.timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1f2937; /* dark gray */
+  margin-bottom: 15px;
+}
+
+/* Timer progress bar container */
+.timer-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #e5e7eb; /* light gray */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Timer progress bar fill */
+.timer-bar-fill {
+  height: 100%;
+  background-color: #4f46e5; /* blue */
+  width: 100%; /* dynamic via inline style in react */
+  transition: width 1s linear;
+}

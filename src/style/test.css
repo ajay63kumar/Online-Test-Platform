@@ -1,0 +1,92 @@
+.available-tests {
+  padding: 2rem;
+  text-align: center;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.available-tests h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #1e293b;
+}
+
+.test-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.test-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: left;
+  position: relative;
+}
+
+.test-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.test-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #0f172a;
+}
+
+.test-card p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+  color: #475569;
+}
+
+.test-card strong {
+  color: #0f172a;
+}
+
+.start-test-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.start-test-btn:hover {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.status-active {
+  background: #16a34a; /* green */
+}
+
+.status-inactive {
+  background: #dc2626; /* red */
+}

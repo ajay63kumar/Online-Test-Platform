@@ -1,0 +1,61 @@
+.result-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.result-page h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.result-page h2 {
+  font-size: 22px;
+  color: #3b82f6;
+}
+
+.result-details {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.result-details ol {
+  padding-left: 20px;
+}
+
+.result-details li {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.correct {
+  background: #dcfce7;
+  border-left: 5px solid #22c55e;
+}
+
+.wrong {
+  background: #fee2e2;
+  border-left: 5px solid #ef4444;
+}
+
+.back-btn {
+  margin-top: 20px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #2563eb;
+}

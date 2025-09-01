@@ -1,0 +1,113 @@
+/* UserPerformance.css */
+
+/* Container */
+.user-performance-container {
+  padding: 20px;
+  background-color: #1f2937; /* Tailwind gray-800 equivalent */
+  color: #f9fafb; /* white-ish text */
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Title */
+.user-performance-container h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Search bar container */
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Search input */
+.search-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+  outline: none;
+}
+
+/* Search button */
+.search-btn {
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #4338ca;
+}
+
+/* Chart container */
+.chart-container {
+  width: 100%;
+  height: 400px;
+  background-color: #111827; /* darker gray background */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Tooltip customization */
+.recharts-tooltip-wrapper {
+  background-color: #1f2937 !important;
+  color: #f9fafb !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  padding: 8px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5) !important;
+}
+
+/* X-Axis and Y-Axis labels */
+.recharts-cartesian-axis-tick-value {
+  fill: #f9fafb;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* Bars */
+.recharts-bar-rectangle {
+  rx: 6; /* rounded top corners */
+  ry: 6;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .user-performance-container {
+    padding: 15px;
+  }
+
+  .chart-container {
+    height: 300px;
+    padding: 15px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  .search-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

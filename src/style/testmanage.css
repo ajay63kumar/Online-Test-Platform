@@ -1,0 +1,315 @@
+/* ==========================
+   Test Management + Modal
+   Pure CSS (no JS required)
+   ========================== */
+
+/* --- Base / Reset --- */
+:root{
+  --bg:#0f1724;
+  --card:#ffffff;
+  --muted:#64748b;
+  --accent:#2563eb;
+  --danger:#ef4444;
+  --success:#16a34a;
+  --glass: rgba(255,255,255,0.06);
+  --radius:12px;
+  --gap:14px;
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:#0b1220; background:#f8fafc}
+
+/* --- Page wrapper --- */
+.test-page{
+  max-width:1100px;
+  margin:28px auto;
+  padding:20px;
+}
+
+/* Heading + message */
+.test-heading{
+  font-size:1.6rem;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.test-message{
+  margin:10px 0 18px;
+  padding:10px 14px;
+  background:#ddf7e7;
+  color: #064e3b;
+  border-left:4px solid var(--success);
+  border-radius:8px;
+  font-weight:600;
+}
+
+/* --- API cards controls --- */
+.api-cards{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+
+.api-card{
+  background:var(--card);
+  border-radius:10px;
+  padding:12px 16px;
+  box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+  cursor:pointer;
+  font-weight:600;
+  transition:transform .12s ease, box-shadow .12s ease;
+  user-select:none;
+  border:1px solid #eef2ff;
+}
+
+.api-card:hover{ transform:translateY(-4px); box-shadow: 0 12px 30px rgba(16,24,40,0.08) }
+.api-card:active{ transform: translateY(-1px) }
+
+/* --- Main area --- */
+.api-functionality{ margin-top:8px; }
+
+/* --- Test cards grid --- */
+.test-cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap:16px;
+  margin-top:12px;
+}
+
+.test-card{
+  background:var(--card);
+  border-radius:12px;
+  padding:14px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+  border: 1px solid #eef2ff;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.test-card h4{
+  margin:0;
+  font-size:1.05rem;
+}
+
+.test-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* card buttons row */
+.test-card-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-danger {
+  border:0;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .08s ease, box-shadow .12s ease;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+  box-shadow: 0 8px 18px rgba(37,99,235,0.18);
+}
+.btn-primary:hover{ transform: translateY(-2px) }
+.btn-secondary{
+  background:#f3f4f6;
+  color:#0b1220;
+}
+.btn-secondary:hover{ transform: translateY(-2px) }
+.btn-danger{
+  background:var(--danger);
+  color:#fff;
+  box-shadow: 0 6px 16px rgba(239,68,68,0.18);
+}
+.btn-danger:hover{ transform: translateY(-2px) }
+
+/* link-like button (used for modal open) */
+.link-like-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border-radius:9px;
+  background:#fff;
+  border:1px solid #eee;
+  text-decoration:none;
+  color: #111827;
+  font-weight:700;
+}
+
+/* --- Form styles --- */
+.test-form{
+  max-width:900px;
+  margin-top:12px;
+  background: #ffffff;
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.06);
+  border:1px solid #eef2ff;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.test-input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid #e6eef8;
+  background: #fff;
+  font-size:0.98rem;
+  outline: none;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+
+.test-input:focus{
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.08);
+}
+
+.question-block{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:10px;
+  border-radius:8px;
+  background: #fbfdff;
+  border:1px dashed #eef4ff;
+}
+
+/* PDF upload region */
+.pdf-upload{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* test buttons area */
+.test-buttons{
+  display:flex;
+  gap:12px;
+  justify-content:flex-end;
+  margin-top:6px;
+}
+
+/* small helper text */
+.small{
+  font-size:0.85rem;
+  color:var(--muted);
+}
+
+/* --- Modal (pure CSS :target) --- */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  z-index:1200;
+}
+
+.modal:target{ display:block }
+
+/* backdrop layer */
+.modal__backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(2,6,23,0.56);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+/* dialog container */
+.modal__dialog{
+  position:relative;
+  width: min(92%, 560px);
+  margin: 8vh auto;
+  background:#fff;
+  border-radius:14px;
+  box-shadow: 0 30px 80px rgba(2,6,23,0.45);
+  overflow:hidden;
+  transform-origin: top center;
+  animation: modal-pop .12s cubic-bezier(.2,.9,.3,1);
+}
+
+@keyframes modal-pop{
+  from{ transform: translateY(8px) scale(.995); opacity:.6 }
+  to{ transform: translateY(0) scale(1); opacity:1 }
+}
+
+.modal__header{
+  padding:16px 18px;
+  font-weight:800;
+  color:#0b1220;
+  border-bottom:1px solid #f3f4f6;
+}
+
+.modal__body{
+  padding:18px;
+  color:#111827;
+  line-height:1.45;
+}
+
+.modal__footer{
+  padding:14px 18px 18px;
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  background:#fff;
+}
+
+/* modal buttons */
+.modal__btn{
+  padding:10px 12px;
+  border-radius:10px;
+  font-weight:700;
+  border:0;
+  cursor:pointer;
+}
+
+.modal__btn--primary{
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 10px 30px rgba(37,99,235,0.12);
+}
+.modal__btn--ghost{
+  background:#f8fafc;
+  color:#0b1220;
+  border:1px solid #eef2ff;
+}
+
+/* clickable backdrop helper (cover area) */
+.modal__close-area{
+  position:absolute;
+  inset:0;
+  display:block;
+  background: transparent;
+}
+
+/* Accessibility focus visible */
+a:focus, button:focus, input:focus { outline:3px solid rgba(37,99,235,0.12); outline-offset:3px }
+
+/* --- Responsive tweaks --- */
+@media (max-width:880px){
+  .test-cards{ grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) }
+  .test-form{ padding:14px }
+  .modal__dialog{ margin:6vh 20px }
+}
+
+@media (max-width:480px){
+  .api-cards{ gap:8px; }
+  .api-card{ padding:10px; font-size:0.95rem }
+  .test-card h4{ font-size:1rem }
+  .modal__dialog{ width: 94% }
+}

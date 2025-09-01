@@ -1,0 +1,50 @@
+.leaderboard-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.leaderboard-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.leaderboard-table th {
+  background: #334155;
+  color: white;
+  font-weight: 600;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+.leaderboard-table tr:hover {
+  background: #e2e8f0;
+}

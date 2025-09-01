@@ -1,0 +1,186 @@
+/* ===== User Management Page Styles ===== */
+
+.user-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #1e1e2f;
+  color: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.user-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #00d4ff;
+}
+
+/* Search Bar */
+.user-search {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #2a2a40;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.user-search:focus {
+  background: #333355;
+  border: 1px solid #00d4ff;
+}
+
+/* Table Styling */
+.user-table-container {
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.user-table th {
+  background: #2b2b3c;
+  color: #00d4ff;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.user-table tr {
+  background: #2a2a40;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.user-table tr:hover {
+  background: #333355;
+  transform: scale(1.01);
+}
+
+.user-empty {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #aaa;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 14px;
+  margin: 2px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-edit {
+  background: #4cafef;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: #2196f3;
+}
+
+.btn-delete {
+  background: #ff5c5c;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background: #e60000;
+}
+
+.btn-save {
+  background: #28c76f;
+  color: #fff;
+  width: 100%;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.btn-save:hover {
+  background: #1fa055;
+}
+
+/* Edit Form */
+.edit-form {
+  margin-top: 30px;
+  padding: 20px;
+  background: #2a2a40;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.edit-form h2 {
+  margin-bottom: 15px;
+  color: #00d4ff;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #3b3b52;
+  color: #fff;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.edit-input:focus {
+  background: #444466;
+  outline: 1px solid #00d4ff;
+}
+
+/* Error & Loading */
+.user-error {
+  background: #ff4d4d;
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.user-loading {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

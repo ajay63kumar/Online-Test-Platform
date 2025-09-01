@@ -1,0 +1,108 @@
+.admin-dashboard {
+  padding: 30px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: #f9fafc;
+  min-height: 100vh;
+}
+
+.admin-dashboard h1 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.card h2 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #222;
+}
+
+.card p {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Different color accents for each card */
+.user-card {
+  border-top: 6px solid #4a90e2;
+}
+.user-card .card-icon {
+  color: #4a90e2;
+}
+
+.teacher-card {
+  border-top: 6px solid #f39c12;
+}
+.teacher-card .card-icon {
+  color: #f39c12;
+}
+
+.test-card {
+  border-top: 6px solid #27ae60;
+}
+.test-card .card-icon {
+  color: #27ae60;
+}
+
+.subject-card {
+  border-top: 6px solid #8e44ad;
+}
+.subject-card .card-icon {
+  color: #8e44ad;
+}
+
+/* Loader */
+.dashboard-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 50px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;  /* 🔥 now clickable */
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
